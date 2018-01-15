@@ -6,11 +6,8 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
-import android.os.Handler
 import android.util.AttributeSet
-import android.view.View
 import com.ht117.htui.BaseView
-
 import com.ht117.htui.R
 import com.ht117.htui.Utils
 
@@ -51,10 +48,10 @@ class CircleLoadingView(context: Context, attrs: AttributeSet?) : BaseView(conte
         var array: TypedArray? = null
         try {
             array = context.obtainStyledAttributes(attrs, R.styleable.CircleLoadingView)
-            coLeft = array!!.getColor(R.styleable.CircleLoadingView_ht_colorLeft, Color.BLUE)
-            coTop = array.getColor(R.styleable.CircleLoadingView_ht_colorTop, Color.YELLOW)
-            coRight = array.getColor(R.styleable.CircleLoadingView_ht_colorRight, Color.GREEN)
-            coBot = array.getColor(R.styleable.CircleLoadingView_ht_colorBot, Color.RED)
+            coLeft = array!!.getColor(R.styleable.CircleLoadingView_ht_leftColor, Color.BLUE)
+            coTop = array.getColor(R.styleable.CircleLoadingView_ht_topColor, Color.YELLOW)
+            coRight = array.getColor(R.styleable.CircleLoadingView_ht_rightColor, Color.GREEN)
+            coBot = array.getColor(R.styleable.CircleLoadingView_ht_botColor, Color.RED)
 
         } catch (exp: Exception) {
             coLeft = Color.BLUE
@@ -105,5 +102,7 @@ class CircleLoadingView(context: Context, attrs: AttributeSet?) : BaseView(conte
         canvas.drawArc(rect, (startDeg + SWEEP).toFloat(), SWEEP.toFloat(), false, painterTop)
         canvas.drawArc(rect, (startDeg + SWEEP * 2).toFloat(), SWEEP.toFloat(), false, painterRight)
         canvas.drawArc(rect, (startDeg + SWEEP * 3).toFloat(), SWEEP.toFloat(), false, painterBot)
+
+        handler.postDelayed(handleCtrl, interval.toLong())
     }
 }

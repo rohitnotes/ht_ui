@@ -23,15 +23,15 @@ abstract class BaseView(context: Context?, attrs: AttributeSet?) : View(context,
         var base: TypedArray? = null
         try {
             base = context!!.obtainStyledAttributes(attrs, R.styleable.BaseView)
-            bgColor = base.getColor(R.styleable.BaseView_ht_background, Color.WHITE)
-            duration = base.getInt(R.styleable.BaseView_ht_duration, Utils.DEF_TIME)
+            bgColor = base.getColor(R.styleable.BaseView_ht_bgColor, Color.WHITE)
+            duration = base.getInt(R.styleable.BaseView_ht_duration, Utils.DEF_TIME * Utils.SECOND)
             txtSize = base.getDimension(R.styleable.BaseView_ht_txtSize, Utils.DEF_TXT_SIZE)
             txtColor = base.getColor(R.styleable.BaseView_ht_txtColor, Color.BLACK)
             interval = base.getInt(R.styleable.BaseView_ht_interval, Utils.SECOND / 10)
             strokeWidth = base.getInt(R.styleable.BaseView_ht_strokeWidth, Utils.DEF_STROKE_WIDTH)
         } catch (exp: Exception) {
             bgColor = Color.WHITE
-            duration = Utils.DEF_TIME
+            duration = Utils.DEF_TIME * Utils.SECOND
             txtSize = Utils.DEF_TXT_SIZE
             txtColor = Color.BLACK
             interval = Utils.SECOND / 10
@@ -46,7 +46,7 @@ abstract class BaseView(context: Context?, attrs: AttributeSet?) : View(context,
     abstract fun drawView(canvas: Canvas)
 
     override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
+        //super.onDraw(canvas)
         drawView(canvas)
     }
 }

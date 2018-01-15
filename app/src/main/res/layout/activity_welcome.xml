@@ -12,15 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.ht117.htui.loading.SquareCoundDownView
-            android:id="@+id/squareCoundDownView"
+        <com.ht117.htui.loading.SquareCountDownView
+            android:id="@+id/squareCountDownView"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_marginTop="10dp"
-            app:ht_background="@android:color/holo_blue_light"
+            app:ht_bgColor="@android:color/holo_blue_light"
             app:ht_interval="250"
             app:ht_duration="7000"
             app:ht_oriented="horizon" />
@@ -32,11 +32,11 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            app:ht_colorLeft="@android:color/holo_blue_light"
-            app:ht_colorTop="@android:color/holo_green_light"
-            app:ht_colorRight="@android:color/holo_red_light"
-            app:ht_colorBot="@android:color/holo_orange_light"
-            app:ht_interval="250"/>
+            app:ht_leftColor="@android:color/holo_blue_light"
+            app:ht_topColor="@android:color/holo_green_light"
+            app:ht_rightColor="@android:color/holo_red_light"
+            app:ht_botColor="@android:color/holo_orange_light"
+            app:ht_interval="500"/>
 
         <com.ht117.htui.loading.CircleCountDownView
             android:id="@+id/circleCountDownView"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:ht_txtSize="15sp"
-            app:ht_background="@color/colorAccent"
+            app:ht_bgColor="@color/colorAccent"
             app:ht_txtColor="@color/colorPrimary"
             app:ht_interval="250"
             app:ht_duration="7000"/>

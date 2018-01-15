@@ -1,17 +1,12 @@
 package com.ht117.htui.loading
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
-import android.os.Handler
 import android.util.AttributeSet
-import android.view.View
 import com.ht117.htui.BaseView
-
 import com.ht117.htui.R
 import com.ht117.htui.Utils
 
@@ -38,31 +33,18 @@ class CircleCountDownView(context: Context, attrs: AttributeSet?) : BaseView(con
     }
 
     init {
-        var array: TypedArray? = null
-        try {
-            array = context.obtainStyledAttributes(attrs, R.styleable.CircleCountDownView)
-            timeLeft = duration.toDouble()
-            startDeg = Utils.TWO_PI / 4 * 3
-            degree = Utils.TWO_PI.toDouble()
-        } catch (exp: Exception) {
-            bgColor = Color.BLUE
-            txtColor = Color.WHITE
-            duration = Utils.DEF_TIME
-            txtSize = Utils.DEF_TXT_SIZE
-            interval = Utils.SECOND / 10
-        } finally {
-            if (array != null) {
-                array.recycle()
-            }
-            bgPainter = Paint(Paint.ANTI_ALIAS_FLAG)
-            bgPainter.style = Paint.Style.FILL_AND_STROKE
-            bgPainter.color = bgColor
+        timeLeft = duration.toDouble()
+        startDeg = Utils.TWO_PI / 4 * 3
+        degree = Utils.TWO_PI.toDouble()
 
-            txtPainter = Paint(Paint.ANTI_ALIAS_FLAG)
-            txtPainter.style = Paint.Style.STROKE
-            txtPainter.color = txtColor
-            txtPainter.textSize = txtSize.toFloat()
-        }
+        bgPainter = Paint(Paint.ANTI_ALIAS_FLAG)
+        bgPainter.style = Paint.Style.FILL_AND_STROKE
+        bgPainter.color = bgColor
+
+        txtPainter = Paint(Paint.ANTI_ALIAS_FLAG)
+        txtPainter.style = Paint.Style.STROKE
+        txtPainter.color = txtColor
+        txtPainter.textSize = txtSize
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

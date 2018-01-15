@@ -1,23 +1,21 @@
 package com.ht117.demo
 
+import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.SeekBar
 import android.widget.TextView
-
 import com.ht117.htui.Utils
 import com.ht117.htui.loading.CircleCountDownView
-import com.ht117.htui.loading.SquareCoundDownView
 import com.ht117.htui.loading.NumberLoadingView
+import com.ht117.htui.loading.SquareCountDownView
+import java.util.*
 
-import java.util.Random
-
-class WelcomeActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener, View.OnClickListener {
+class WelcomeActivity : Activity(), SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
     private lateinit var seekbar: SeekBar
-    private lateinit var squareCoundDownView: SquareCoundDownView
+    private lateinit var squareCountDownView: SquareCountDownView
     private lateinit var circleCountDownView: CircleCountDownView
     private lateinit var numberLoadingView: NumberLoadingView
     private lateinit var handler: Handler
@@ -25,7 +23,7 @@ class WelcomeActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener, Vi
     private val randomProgress: Runnable = object : Runnable {
         override fun run() {
             val prog = numberLoadingView.getProgress()
-            if (prog < Utils.PERCENT) {
+            if (prog <= Utils.PERCENT) {
                 val rnd = Random()
                 val rndVal = rnd.nextInt(10)
                 numberLoadingView.setProgress(prog + rndVal)
@@ -42,11 +40,11 @@ class WelcomeActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener, Vi
 
         findViewById(R.id.btnPlay).setOnClickListener(this)
 
-        squareCoundDownView = findViewById(R.id.countDownView) as SquareCoundDownView
+        squareCountDownView = findViewById(R.id.squareCountDownView) as SquareCountDownView
         circleCountDownView = findViewById(R.id.circleCountDownView) as CircleCountDownView
         numberLoadingView = findViewById(R.id.numberLoadingView) as NumberLoadingView
 
-        val duration = circleCountDownView.duration() / Utils.SECOND
+        val duration = circleCountDownView.duration / Utils.SECOND
         (findViewById(R.id.tvDuration) as TextView).text = String.format("Duration: %ds", duration)
 
         seekbar = findViewById(R.id.seekDuration) as SeekBar
@@ -59,21 +57,21 @@ class WelcomeActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener, Vi
 
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
         (findViewById(R.id.tvDuration) as TextView).text = String.format("Duration: %ds", seekBar.progress)
-        squareCoundDownView.duration = seekbar.progress
-        circleCountDownView.duration = seekbar.progress
+        squareCountDownView.duration = seekbar.progress * Utils.SECOND
+        circleCountDownView.duration = seekbar.progress * Utils.SECOND
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar) {}
 
     override fun onStopTrackingTouch(seekBar: SeekBar) {
-        squareCoundDownView.duration = seekbar.progress
-        circleCountDownView.duration = seekbar.progress
+        squareCountDownView.duration = seekbar.progress * Utils.SECOND
+        circleCountDownView.duration = seekbar.progress * Utils.SECOND
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnPlay -> {
-                squareCoundDownView.start()
+                squareCountDownView.start()
                 circleCountDownView.start()
                 numberLoadingView.reset()
                 handler.postDelayed(randomProgress, (Utils.SECOND / 4).toLong())

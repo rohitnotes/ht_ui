@@ -7,9 +7,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
-import android.view.View
 import com.ht117.htui.BaseView
-
 import com.ht117.htui.R
 import com.ht117.htui.Utils
 
@@ -46,7 +44,7 @@ class NumberLoadingView(context: Context, attrs: AttributeSet?) : BaseView(conte
             unloadedBarPainter.style = Paint.Style.FILL_AND_STROKE
 
             txtPainter = Paint(Paint.ANTI_ALIAS_FLAG)
-            txtPainter.textSize = txtSize.toFloat()
+            txtPainter.textSize = txtSize
             txtPainter.color = txtColor
             txtPainter.style = Paint.Style.STROKE
         } catch (exp: Exception) {
@@ -65,7 +63,7 @@ class NumberLoadingView(context: Context, attrs: AttributeSet?) : BaseView(conte
     fun getProgress() : Int = progress
 
     fun setProgress(value: Int) {
-        progress = if (progress < Utils.PERCENT) value else Utils.PERCENT
+        progress = if (value <= Utils.PERCENT) value else Utils.PERCENT
         content = Utils.getContentFormat(context, R.string.format_percent, progress) + "%"
         invalidate()
     }

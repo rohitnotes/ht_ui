@@ -3,38 +3,37 @@
 
     <!-- Base HT view -->
     <declare-styleable name="BaseView">
-        <attr name="ht_background" format="color"/>
-        <attr name="ht_duration" format="integer"/>
-        <attr name="ht_interval" format="integer"/>
-        <attr name="ht_txtColor" format="color"/>
-        <attr name="ht_txtSize" format="dimension"/>
-        <attr name="ht_strokeWidth" format="dimension"/>
+        <attr name="ht_bgColor" format="color" />
+        <attr name="ht_duration" format="integer" />
+        <attr name="ht_interval" format="integer" />
+        <attr name="ht_txtColor" format="color" />
+        <attr name="ht_txtSize" format="dimension" />
+        <attr name="ht_strokeWidth" format="dimension" />
     </declare-styleable>
 
     <!-- Square count down view -->
     <declare-styleable name="SquareCountDownView" parent="BaseView">
         <attr name="ht_oriented" format="enum">
-            <enum name="horizon" value="1"/>
-            <enum name="vertical" value="0"/>
+            <enum name="horizon" value="1" />
+            <enum name="vertical" value="0" />
         </attr>
     </declare-styleable>
 
     <!-- Circle count down view -->
-    <declare-styleable name="CircleCountDownView" parent="BaseView">
-    </declare-styleable>
+    <declare-styleable name="CircleCountDownView" parent="BaseView"/>
 
     <!-- Circle loading view -->
     <declare-styleable name="CircleLoadingView" parent="BaseView">
-        <attr name="ht_colorLeft" format="color"/>
-        <attr name="ht_colorRight" format="color"/>
-        <attr name="ht_colorTop" format="color"/>
-        <attr name="ht_colorBot" format="color"/>
+        <attr name="ht_leftColor" format="color" />
+        <attr name="ht_rightColor" format="color" />
+        <attr name="ht_topColor" format="color" />
+        <attr name="ht_botColor" format="color" />
     </declare-styleable>
 
     <!-- Number loading -->
     <declare-styleable name="NumberLoadingView" parent="BaseView">
-        <attr name="ht_loadedColor" format="color"/>
-        <attr name="ht_unloadedColor" format="color"/>
+        <attr name="ht_loadedColor" format="color" />
+        <attr name="ht_unloadedColor" format="color" />
     </declare-styleable>
 
 </resources>
