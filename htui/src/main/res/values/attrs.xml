@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Count down view -->
-    <declare-styleable name="CountDownView">
-        <attr name="cdv_background" format="color"/>
-        <attr name="cdv_duration" format="integer"/>
-        <attr name="cdv_interval" format="integer"/>
-        <attr name="cdv_oriented" format="enum">
+    <!-- Base HT view -->
+    <declare-styleable name="BaseView">
+        <attr name="ht_background" format="color"/>
+        <attr name="ht_duration" format="integer"/>
+        <attr name="ht_interval" format="integer"/>
+        <attr name="ht_txtColor" format="color"/>
+        <attr name="ht_txtSize" format="dimension"/>
+        <attr name="ht_strokeWidth" format="dimension"/>
+    </declare-styleable>
+
+    <!-- Square count down view -->
+    <declare-styleable name="SquareCountDownView" parent="BaseView">
+        <attr name="ht_oriented" format="enum">
             <enum name="horizon" value="1"/>
             <enum name="vertical" value="0"/>
         </attr>
     </declare-styleable>
 
-    <!-- Circle loading view -->
-    <declare-styleable name="CircleLoadingView">
-        <attr name="clv_colorLeft" format="color"/>
-        <attr name="clv_colorRight" format="color"/>
-        <attr name="clv_colorTop" format="color"/>
-        <attr name="clv_colorBot" format="color"/>
-        <attr name="clv_interval" format="integer"/>
-        <attr name="clv_strokeWidth" format="integer"/>
+    <!-- Circle count down view -->
+    <declare-styleable name="CircleCountDownView" parent="BaseView">
     </declare-styleable>
 
-    <!-- Circle count down view -->
-    <declare-styleable name="CircleCountDownView">
-        <attr name="ccdv_background" format="color"/>
-        <attr name="ccdv_textcolor" format="color"/>
-        <attr name="ccdv_duration" format="integer"/>
-        <attr name="ccdv_interval" format="integer"/>
-        <attr name="ccdv_txtSize" format="dimension"/>
+    <!-- Circle loading view -->
+    <declare-styleable name="CircleLoadingView" parent="BaseView">
+        <attr name="ht_colorLeft" format="color"/>
+        <attr name="ht_colorRight" format="color"/>
+        <attr name="ht_colorTop" format="color"/>
+        <attr name="ht_colorBot" format="color"/>
     </declare-styleable>
 
     <!-- Number loading -->
-    <declare-styleable name="NumberLoadingView">
-        <attr name="nlv_txtSize" format="dimension"/>
-        <attr name="nlv_loadedColor" format="color"/>
-        <attr name="nlv_unloadedColor" format="color"/>
-        <attr name="nlv_txtColor" format="color"/>
-        <attr name="nlv_strokeWidth" format="dimension"/>
+    <declare-styleable name="NumberLoadingView" parent="BaseView">
+        <attr name="ht_loadedColor" format="color"/>
+        <attr name="ht_unloadedColor" format="color"/>
     </declare-styleable>
 
 </resources>

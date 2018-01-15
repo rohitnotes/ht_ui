@@ -1,4 +1,4 @@
-package com.ht117.thundermath;
+package com.ht117.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

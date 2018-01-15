@@ -12,18 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.ht117.htui.loading.CountDownView
-            android:id="@+id/countDownView"
+        <com.ht117.htui.loading.SquareCoundDownView
+            android:id="@+id/squareCoundDownView"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_marginTop="10dp"
-            app:cdv_background="@android:color/holo_blue_light"
-            app:cdv_interval="250"
-            app:cdv_duration="7000"
-            app:cdv_oriented="horizon" />
+            app:ht_background="@android:color/holo_blue_light"
+            app:ht_interval="250"
+            app:ht_duration="7000"
+            app:ht_oriented="horizon" />
 
         <com.ht117.htui.loading.CircleLoadingView
             android:layout_gravity="center_horizontal"
@@ -32,11 +32,11 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            app:clv_colorLeft="@android:color/holo_blue_light"
-            app:clv_colorTop="@android:color/holo_green_light"
-            app:clv_colorRight="@android:color/holo_red_light"
-            app:clv_colorBot="@android:color/holo_orange_light"
-            app:clv_interval="250"/>
+            app:ht_colorLeft="@android:color/holo_blue_light"
+            app:ht_colorTop="@android:color/holo_green_light"
+            app:ht_colorRight="@android:color/holo_red_light"
+            app:ht_colorBot="@android:color/holo_orange_light"
+            app:ht_interval="250"/>
 
         <com.ht117.htui.loading.CircleCountDownView
             android:id="@+id/circleCountDownView"
@@ -45,22 +45,22 @@
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:ccdv_txtSize="15sp"
-            app:ccdv_background="@color/colorAccent"
-            app:ccdv_textcolor="@color/colorPrimary"
-            app:ccdv_interval="250"
-            app:ccdv_duration="7000"/>
+            app:ht_txtSize="15sp"
+            app:ht_background="@color/colorAccent"
+            app:ht_txtColor="@color/colorPrimary"
+            app:ht_interval="250"
+            app:ht_duration="7000"/>
 
         <com.ht117.htui.loading.NumberLoadingView
             android:id="@+id/numberLoadingView"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            app:nlv_loadedColor="@android:color/holo_red_light"
-            app:nlv_unloadedColor="@android:color/tertiary_text_light"
-            app:nlv_txtColor="@color/colorPrimary"
-            app:nlv_txtSize="15sp"
-            app:nlv_strokeWidth="3dp"/>
+            app:ht_loadedColor="@android:color/holo_red_light"
+            app:ht_unloadedColor="@android:color/tertiary_text_light"
+            app:ht_txtColor="@color/colorPrimary"
+            app:ht_txtSize="15sp"
+            app:ht_strokeWidth="3dp"/>
 
     </LinearLayout>
 
