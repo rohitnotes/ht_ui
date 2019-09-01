@@ -17,13 +17,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_width="10dp"
+            android:layout_height="90dp"
             android:layout_marginTop="10dp"
             app:cdv_background="@android:color/holo_blue_light"
             app:cdv_interval="250"
             app:cdv_duration="7000"
-            app:cdv_oriented="horizon" />
+            app:cdv_oriented="vertical" />
 
         <com.ht117.htui.loading.CircleLoadingView
             android:layout_gravity="center_horizontal"
